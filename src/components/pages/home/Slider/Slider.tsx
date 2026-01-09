@@ -10,6 +10,8 @@ import cn from 'clsx'
 export const Slider = () => {
   const [activeSlideId, setActiveSlideId] = useState(1)
 
+  // TODO: Slider animation
+
   return (
     <div className="relative">
       {SLIDES.map((slide) => (

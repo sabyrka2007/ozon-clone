@@ -3,6 +3,10 @@ import Link from 'next/link'
 import cn from 'clsx'
 
 export const TopMenu = () => {
+
+  // TODO: Location mock
+  // TODO: Language selector
+
   return (
     <nav className="flex gap-5 items-center px-5 pb-5 bg-white">
       {topMenu.map((item) => (
