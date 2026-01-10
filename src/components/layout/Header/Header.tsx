@@ -3,11 +3,15 @@
 import Image from 'next/image'
 import { LayoutGrid, Search } from 'lucide-react'
 import { headerMenu } from './header-menu.data'
+
 import Link from 'next/link'
 
 import cn from 'clsx'
+import { useTranslations } from 'next-intl'
 
 export const Header = () => {
+  const t = useTranslations('header')
+
   return (
     <header className="flex items-center gap-5 py-3 px-5 bg-white">
       <Link href="/">
@@ -25,14 +29,14 @@ export const Header = () => {
         className="bg-primary p-2 rounded-lg text-white flex items-center gap-2 transition-all cursor-pointer hover:bg-blue-600"
       >
         <LayoutGrid />
-        <span>Каталог</span>
+        <span>{t('catalogTitle')}</span>
       </button>
 
       <div className="rounded-xl p-1 flex items-center grow bg-primary">
         <input
           className="grow bg-white rounded-lg px-4 py-1.5"
           type="text"
-          placeholder="Искать на Ozon"
+          placeholder={t('searchPlaceholder')}
           value=""
           onChange={() => {
           }}

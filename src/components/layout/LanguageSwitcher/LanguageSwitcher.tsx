@@ -1,22 +1,33 @@
 'use client'
 
 import { LANGUAGES } from '@/components/layout/LanguageSwitcher/languages.data'
-import { useMemo, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import Cookies from 'js-cookie'
 
 export const LanguageSwitcher = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ru'>('ru')
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const language = useMemo(() => {
-    return LANGUAGES.find((item) => item.code === currentLanguage)
-  }, [currentLanguage])
+  const currentLanguage = pathname.split('/')[1] as 'ru' | 'en'
+
+  const toggleHandler = () => {
+    const newLanguage = currentLanguage === 'en' ? 'ru' : 'en'
+
+    Cookies.set('locale', newLanguage, { path: '/' })
+
+    const restPath = pathname.replace(/^\/(ru|en)/, '')
+
+    router.push(`/${newLanguage}${restPath}`)
+  }
+
+  const language = LANGUAGES.find(
+    (item) => item.code === currentLanguage,
+  )
 
   return (
     <button
-      key={language?.code}
-      className="flex gap-2 p-0.5 rounded-sm cursor-pointer transition-all hover:bg-gray-200 dark:bg-gray-800 group w-12"
-      onClick={() => {
-        setCurrentLanguage((prev) => (prev === 'en' ? 'ru' : 'en'))
-      }}
+      onClick={toggleHandler}
+      className="flex gap-2 p-0.5 rounded-sm cursor-pointer transition-all hover:bg-gray-200 group w-12"
     >
       <span className="group-hover:rotate-6 transition-transform">
         {language?.flag}
