@@ -10,11 +10,11 @@ export const Slider = () => {
   const slidesCount = SLIDES.length
 
   const goPrev = () => {
-    setCurrent((prev) => (prev === 0 ? slidesCount - 1 : prev - 1))
+    setCurrent((prev) => prev - 1)
   }
 
   const goNext = () => {
-    setCurrent((prev) => (prev === slidesCount - 1 ? 0 : prev + 1))
+    setCurrent((prev) => prev + 1)
   }
 
   return (
@@ -24,10 +24,7 @@ export const Slider = () => {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {SLIDES.map((slide) => (
-          <div
-            key={slide.id}
-            className="min-w-full select-none"
-          >
+          <div key={slide.id} className="min-w-full select-none">
             <Image
               src={slide.image}
               width={1500}
@@ -42,19 +39,27 @@ export const Slider = () => {
       </div>
 
       <div className="absolute inset-0 flex items-center justify-between px-4">
-        <button
-          onClick={goPrev}
-          className="bg-white/50 hover:bg-white/75 transition p-2.5 rounded-lg"
-        >
-          <ChevronLeft size={20} />
-        </button>
+        {current > 0 ? (
+          <button
+            onClick={goPrev}
+            className="bg-white/50 hover:bg-white/75 transition p-2.5 rounded-lg"
+          >
+            <ChevronLeft size={20} />
+          </button>
+        ) : (
+          <div />
+        )}
 
-        <button
-          onClick={goNext}
-          className="bg-white/50 hover:bg-white/75 transition p-2.5 rounded-lg"
-        >
-          <ChevronRight size={20} />
-        </button>
+        {current < slidesCount - 1 ? (
+          <button
+            onClick={goNext}
+            className="bg-white/50 hover:bg-white/75 transition p-2.5 rounded-lg"
+          >
+            <ChevronRight size={20} />
+          </button>
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   )
