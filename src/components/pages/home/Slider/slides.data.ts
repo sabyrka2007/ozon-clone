@@ -15,4 +15,4 @@ export const SLIDES = [
     id: 4,
     image: '/banner/4.jpg',
   },
-]
+] as const

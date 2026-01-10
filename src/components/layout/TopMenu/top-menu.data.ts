@@ -43,4 +43,4 @@ export const topMenu = [
     title: 'Сертификаты',
     href: PagesConfig.CERTIFICATES,
   },
-]
+] as const

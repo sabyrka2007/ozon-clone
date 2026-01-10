@@ -1,7 +1,7 @@
 import { topMenu } from '@/components/layout/TopMenu/top-menu.data'
 import Link from 'next/link'
 import cn from 'clsx'
-import { allowedDisplayValues } from 'next/dist/compiled/@next/font/dist/constants'
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 
 export const TopMenu = () => {
 
@@ -34,6 +34,10 @@ export const TopMenu = () => {
         <button className="text-primary font-semibold">
           Укажите вдрес
         </button>
+      </div>
+
+      <div>
+        <LanguageSwitcher />
       </div>
     </div>
   )
