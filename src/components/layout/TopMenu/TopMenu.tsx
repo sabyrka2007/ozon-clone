@@ -2,11 +2,12 @@ import { topMenu } from '@/components/layout/TopMenu/top-menu.data'
 import Link from 'next/link'
 import cn from 'clsx'
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
+import { Dot } from 'lucide-react'
 
 export const TopMenu = () => {
   return (
-    <div>
-      <nav className="flex gap-5 items-center px-5 pb-5 bg-white">
+    <div className="flex justify-between items-center pb-5 px-5 bg-white">
+      <nav className="flex gap-5 items-center">
         {topMenu.map((item) => (
           <Link
             href={item.href}
@@ -25,15 +26,18 @@ export const TopMenu = () => {
         ))}
       </nav>
 
-      <div className="font-medium">
-        Москва &qt;
-        <button className="text-primary font-semibold">
-          Укажите вдрес
-        </button>
-      </div>
+      <div className='flex gap-3 items-center'>
+        <div className="font-medium flex items-center">
+          Москва <Dot />
 
-      <div>
-        <LanguageSwitcher />
+          <button className="text-primary font-semibold">
+            Укажите вдрес
+          </button>
+        </div>
+
+        <div>
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
   )

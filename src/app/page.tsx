@@ -5,7 +5,7 @@ import { Slider } from '@/components/pages/home/Slider'
 
 export default function Home() {
   return (
-    <div className='container mx-auto'>
+    <div className='container-custom mx-auto'>
       <Header />
       <TopMenu />
       <Image

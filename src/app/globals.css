@@ -26,3 +26,7 @@ body {
 input {
   outline: none;
 }
+
+.container-custom {
+  max-width: 1440px;
+}

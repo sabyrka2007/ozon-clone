@@ -10,13 +10,15 @@ import cn from 'clsx'
 export const Header = () => {
   return (
     <header className="flex items-center gap-5 py-3 px-5 bg-white">
-      <Image
-        src="/logo.svg"
-        alt="Ozon"
-        width={120}
-        height={60}
-        unoptimized
-      />
+      <Link href="/">
+        <Image
+          src="/logo.svg"
+          alt="Ozon"
+          width={120}
+          height={60}
+          unoptimized
+        />
+      </Link>
 
       <button
         type="button"
@@ -50,7 +52,7 @@ export const Header = () => {
             href={item.href}
             className={cn(
               'flex items-center text-center flex-col transition-all hover:opacity-100 hover:text-primary opacity-50',
-              index === 0 && 'opacity-100'
+              index === 0 && 'opacity-100',
             )}
           >
             <item.icon size={20} />
