@@ -22,7 +22,7 @@ export const Header = () => {
 
       <button
         type="button"
-        className="bg-primary p-2 rounded-lg text-white flex items-center gap-2"
+        className="bg-primary p-2 rounded-lg text-white flex items-center gap-2 transition-all cursor-pointer hover:bg-blue-600"
       >
         <LayoutGrid />
         <span>Каталог</span>
@@ -39,7 +39,7 @@ export const Header = () => {
         />
         <button
           type="button"
-          className="px-4 py-1.5"
+          className="px-4 py-1.5 cursor-pointer bg-primary transition-all rounded-lg hover:bg-blue-600"
         >
           <Search color="#fff" />
         </button>

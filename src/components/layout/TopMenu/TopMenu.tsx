@@ -26,11 +26,13 @@ export const TopMenu = () => {
         ))}
       </nav>
 
-      <div className='flex gap-3 items-center'>
+      <div className="flex gap-3 items-center">
         <div className="font-medium flex items-center">
-          Москва <Dot />
-
-          <button className="text-primary font-semibold">
+          <span className="transition-all hover:text-gray-500 cursor-pointer">
+            Москва
+          </span>
+          <Dot />
+          <button className="text-primary font-semibold cursor-pointer">
             Укажите вдрес
           </button>
         </div>
