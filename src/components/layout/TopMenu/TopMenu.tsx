@@ -4,10 +4,6 @@ import cn from 'clsx'
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 
 export const TopMenu = () => {
-
-  // TODO: Location mock
-  // TODO: Language selector
-
   return (
     <div>
       <nav className="flex gap-5 items-center px-5 pb-5 bg-white">
