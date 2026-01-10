@@ -26,7 +26,7 @@ export const TopMenu = () => {
         ))}
       </nav>
 
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center text-sm">
         <div className="font-medium flex items-center">
           <span className="transition-all hover:text-gray-500 cursor-pointer">
             Москва
